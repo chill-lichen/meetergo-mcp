@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meetergo-mcp"
+version = "0.1.1"
+description = "Community MCP server exposing the meetergo scheduling + CRM API to AI assistants."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "BSD-3-Clause" }
+authors = [{ name = "chill-lichen" }]
+keywords = ["mcp", "meetergo", "scheduling", "crm", "claude", "proton"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Scheduling",
+]
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/chill-lichen/meetergo-mcp"
+Issues = "https://github.com/chill-lichen/meetergo-mcp/issues"
+
+[project.scripts]
+meetergo-mcp = "meetergo_mcp:main"
+
+[tool.setuptools]
+py-modules = ["meetergo_mcp"]
